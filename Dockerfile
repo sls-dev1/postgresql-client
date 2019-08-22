@@ -1,4 +1,4 @@
 FROM alpine:3.7
-RUN apk add --no-cache mysql-client
+RUN apk --update add postgresql-client && rm -rf /var/cache/apk/*
 USER 1001
-ENTRYPOINT ["mysql"]
+ENTRYPOINT [ "psql" ]
